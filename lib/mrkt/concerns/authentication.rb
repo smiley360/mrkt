@@ -29,8 +29,6 @@ module Mrkt
 
     def authenticate
       connection.get('/identity/oauth/token', authentication_params).tap do |response|
-        puts response.body
-
         data = response.body
 
         @token = data.fetch(:access_token)
